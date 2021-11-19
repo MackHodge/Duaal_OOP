@@ -1,13 +1,17 @@
 package Week1.les1.Practicum2B;
 
 public class Voetbalclub {
+    private String naam;
     private int aantalGewonnen;
     private int aantalGelijk;
     private int aantalVerloren;
+    private int aantalGespeeld;
 
-    public Voetbalclub(String feijenoord) {
-
+    public Voetbalclub(String Naam) {
+        naam = Naam;
     }
+
+
 
     public void verwerkResultaat(char ch) {
         if (ch == 'w')
@@ -18,15 +22,20 @@ public class Voetbalclub {
             aantalVerloren = aantalVerloren + 1;
     }
 
+
     public int aantalPunten() {
 
-        return 0;
+        return ((aantalGewonnen * 3 ) + (aantalGelijk));
     }
 
     public int aantalGespeeld() {
 
-        return 0;
+        return aantalGewonnen + aantalVerloren + aantalGelijk;
     }
 
+    public String toString(){
+        return " "+naam +" "+aantalGespeeld()+" "+aantalPunten()+" ";
+    }
 
+    //array method ?
 }
