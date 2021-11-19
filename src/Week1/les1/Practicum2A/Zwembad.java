@@ -4,7 +4,7 @@ public class Zwembad {
     private double _Breedte ;
     private double _Lengte ;
     private double _Diepte ;
-    private double inhoud ;
+
 
     public Zwembad(double breedte, double Lengte, double Diepte) {
         _Breedte = breedte;
@@ -47,6 +47,8 @@ public class Zwembad {
     }
 
     public String toString(){
-        return "Dit zwembad is 2.5 meter breed, 100.0 meter lang, en 2.0 meter diep";
+
+     //String manier2 = String.format("Dit zwembad is %s meter breed, %s meter lang, en %s meter diep", getBreedte(), getLengte(), getDiepte());
+        return "Dit zwembad is " + getBreedte() + " meter breed, " + getLengte() +  " meter lang, en " +getDiepte()+ " meter diep";
     }
 }
