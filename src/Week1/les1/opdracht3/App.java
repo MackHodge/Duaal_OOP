@@ -7,9 +7,9 @@ public class App {
     }
 
     public static void random () {
-        double x;
+
         for(int i = 1 ; i <= 10; i++){
-            System.out.println(x = Math.random());
+            System.out.println(Math.random());
         }
     }
 

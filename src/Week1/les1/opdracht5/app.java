@@ -7,7 +7,7 @@ public class app {
 
     private static void printS() {
         for (int i = 0; i < 2; i++) {
-            if (i < 2) {
+            if (true) {
                 System.out.println("s");
                 System.out.println("ss");
             }
