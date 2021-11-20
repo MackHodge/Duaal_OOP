@@ -13,19 +13,30 @@ public class Cirkel {
     public Cirkel(int x , int y , int  radius){
         xPositie = x ;
         yPositie = y ;
-        this.radius = radius;
+        if(radius <= 0) {
+            throw new IllegalArgumentException("Radius moet groter dan 0 zijn!");
+        }else  {
+            this.radius = radius;
+        }
+
 
     }
 
-    public void throwEx(){
-        if(this.radius <= 0){
+    public int getRadius() {
+        return radius;
+    }
 
-        }
+    public int getxPositie() {
+        return xPositie;
+    }
 
-        }
+    public int getyPositie() {
+        return yPositie;
+    }
+
 
     public String toString(){
-
-        return "";
+        String s = "Cirkel ( "+getxPositie() +", "+getyPositie()+ " ) met radius: "+getRadius()+ "";
+        return s;
     }
 }
