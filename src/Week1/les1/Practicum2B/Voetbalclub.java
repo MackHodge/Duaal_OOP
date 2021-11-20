@@ -9,7 +9,22 @@ public class Voetbalclub {
 
     public Voetbalclub(String Naam) {
         naam = Naam;
+        setWhenNull();
     }
+
+
+    public String getNaam () { return naam;}
+    public String setNaam (String naam) { this.naam = naam; return naam;}
+
+    public int getAantalGewonnen () {return aantalGewonnen;}
+
+    public int getAantalGelijk () {return aantalGelijk;}
+
+    public int getAantalVerloren () {return aantalVerloren;}
+
+    public int wPunten () {return 3;}
+    public int gPunten () {return 1;}
+    public int vPunten () {return 0;}
 
 
 
@@ -20,6 +35,12 @@ public class Voetbalclub {
             aantalGelijk = aantalGelijk + 1;
         if (ch == 'v')
             aantalVerloren = aantalVerloren + 1;
+    }
+
+    public void setWhenNull(){
+        if(getNaam().isEmpty()){
+            setNaam("FC");
+        }
     }
 
 
@@ -34,7 +55,7 @@ public class Voetbalclub {
     }
 
     public String toString(){
-        return " "+naam +" "+aantalGespeeld()+" "+aantalPunten()+" ";
+        return " "+getNaam() +" "+aantalGespeeld()+" "+aantalPunten()+" ";
     }
 
     //array method ?
