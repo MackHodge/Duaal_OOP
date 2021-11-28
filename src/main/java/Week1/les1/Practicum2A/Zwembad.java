@@ -1,15 +1,15 @@
 package Week1.les1.Practicum2A;
 
 public class Zwembad {
-    private double _Breedte ;
-    private double _Lengte ;
-    private double _Diepte ;
+    private double breedte ;
+    private double lengte;
+    private double diepte;
 
 
-    public Zwembad(double breedte, double Lengte, double Diepte) {
-        _Breedte = breedte;
-        _Lengte = Lengte;
-        _Diepte =  Diepte;
+    public Zwembad(double breedte, double lengte, double diepte) {
+        this.breedte = breedte;
+        this. lengte = lengte;
+        this.diepte =  diepte;
 
     }
 
@@ -18,32 +18,32 @@ public class Zwembad {
     }
 
     public double getBreedte() {
-        return _Breedte;
+        return breedte;
     }
 
     public double getLengte() {
-        return _Lengte;
+        return lengte;
     }
 
     public double getDiepte() {
-        return _Diepte;
+        return diepte;
     }
 
 
     public void setBreedte(double breedte) {
-        _Breedte = breedte;
+        breedte = breedte;
     }
 
     public void setLengte(double lengte) {
-        _Lengte = lengte;
+        this.lengte = lengte;
     }
 
     public void setDiepte(double diepte) {
-        _Diepte = diepte;
+        this.diepte = diepte;
     }
     public double inhoud() {
 
-        return _Diepte * _Lengte * _Breedte;
+        return diepte * lengte * breedte;
     }
 
     public String toString(){

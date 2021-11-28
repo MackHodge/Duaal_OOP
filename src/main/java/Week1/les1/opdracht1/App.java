@@ -48,11 +48,16 @@ public class App {
     }
 
     private static void printS() {
-        for (int i = 0; i < 2; i++) {
-            if (true) {
-                System.out.println("s");
-                System.out.println("ss");
-            }
+        String s = "s";
+        for (int i = 0; i < 4; i++) {
+                if(s == "s"){
+                    System.out.println(s);
+                    s = "ss";
+                }else{
+                    System.out.println(s);
+                    s = "s";
+                }
+
         }
     }
 

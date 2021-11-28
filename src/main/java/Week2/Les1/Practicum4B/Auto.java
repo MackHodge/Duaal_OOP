@@ -9,6 +9,11 @@ public class Auto {
         this.prijsPerDag = prijsPerDag;
     }
 
+    public String getAutotype(){
+
+        return this.type;
+    }
+
     public void setPrijsPerDag (double prPd) {
 
         this.prijsPerDag = prPd;
@@ -17,7 +22,9 @@ public class Auto {
         return this.prijsPerDag;
     }
 
+    @Override
     public String toString(){
-        return "";
+        return "autotype: "+this.type +" met prijs per dag: "+this.prijsPerDag+" ";
+
     }
 }

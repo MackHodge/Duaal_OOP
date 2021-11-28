@@ -32,18 +32,22 @@ public class AutoHuur {
     }
     public double totaalPrijs () {
 
-        return 0;
+        return 0.0;
     }
-
+    @Override
     public String toString(){
-        String s = null;
-        if(getGehuurdeAuto() == null){
-            s= "Er is nog geen auto gehuurd";
+        String s = "" , t = "" , e = "";
+        if(this.auto == null){
+            s = "Er is nog geen auto bekend";
+        }else{
+            s ="autotype: "+getGehuurdeAuto().getAutotype()+" met prijs per dag: "+getGehuurdeAuto().getPrijsPerDag()+"";
         }
-        if(getHuurder() == null){
-            s = "Er is nog geen huurder";
+        if(this.klant == null){
+           t = "er is geen huurder bekend";
+        }else{
+            t = "op naam van: Mijnheer de Vries (korting: "+klant.getKorting()+")";
         }
-        return s;
+        return s +"\n"+ t;
     }
 
 

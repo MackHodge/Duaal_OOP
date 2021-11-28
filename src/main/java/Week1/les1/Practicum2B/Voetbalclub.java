@@ -55,8 +55,7 @@ public class Voetbalclub {
     }
 
     public String toString(){
-        return " "+getNaam() +" "+aantalGespeeld()+" "+aantalPunten()+" ";
+        return " "+getNaam() +" "+aantalGespeeld()+" "+getAantalGewonnen()+ " "+getAantalGelijk()+ " "+getAantalVerloren()+" "+aantalPunten()+ " ";
     }
 
-    //array method ?
 }
