@@ -4,8 +4,16 @@ public class Leerling {
     private String naam;
     private double cijfer;
 
-    public Leerling(String nm){
-    naam = nm;
+    /**
+     * Constructor
+     * @param naam Leerling naam
+     */
+    public Leerling(String naam){
+    this.naam = naam;
+    }
+
+    public Leerling(){
+
     }
 
     public String getNaam() {

@@ -23,6 +23,9 @@ public class Huis   {
     public String toString() {
         return "Huis" +
                 " " + adres + " is gebouwd in" +
-                " " + bouwjaar + " en heeft huisbaas " +_Persoon.getNaam()+"; leeftijd " + _Persoon.getLeeftijd()+" jaar";
+                " " + bouwjaar + "\n en heeft huisbaas " +_Persoon.getNaam()+"; leeftijd " + _Persoon.getLeeftijd()+" jaar";
     }
 }
+
+
+

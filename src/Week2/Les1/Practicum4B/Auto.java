@@ -9,6 +9,8 @@ public class Auto {
         this.prijsPerDag = prijsPerDag;
     }
 
+    public Auto (){}
+
     public String getAutotype(){
 
         return this.type;

@@ -7,6 +7,7 @@ public class Klant {
     public Klant(String nm) {
         naam = nm;
     }
+    public Klant (){}
 
     public String getNaam () {
 

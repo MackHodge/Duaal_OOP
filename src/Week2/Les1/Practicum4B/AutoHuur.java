@@ -8,8 +8,26 @@ public class AutoHuur {
     private Auto auto;
 
     public AutoHuur (){
-
+        klant = new Klant();
+        auto = new Auto();
     }
+
+    public Klant getKlant() {
+        return klant;
+    }
+
+    public void setKlant(Klant klant) {
+        this.klant = klant;
+    }
+
+    public Auto getAuto() {
+        return auto;
+    }
+
+    public void setAuto(Auto auto) {
+        this.auto = auto;
+    }
+
     public void setAantalDagen(int i) {
     }
 
@@ -37,12 +55,12 @@ public class AutoHuur {
     @Override
     public String toString(){
         String s = "" , t = "" , e = "";
-        if(this.auto == null){
+        if(getAuto() == null){
             s = "Er is nog geen auto bekend";
         }else{
             s ="autotype: "+getGehuurdeAuto().getAutotype()+" met prijs per dag: "+getGehuurdeAuto().getPrijsPerDag()+"";
         }
-        if(this.klant == null){
+        if(getKlant() == null){
            t = "er is geen huurder bekend";
         }else{
             t = "op naam van: Mijnheer de Vries (korting: "+klant.getKorting()+")";

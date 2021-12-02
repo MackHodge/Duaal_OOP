@@ -37,6 +37,7 @@ public class Voetbalclub {
             aantalVerloren = aantalVerloren + 1;
     }
 
+
     public void setWhenNull(){
         if(getNaam().isEmpty()){
             setNaam("FC");

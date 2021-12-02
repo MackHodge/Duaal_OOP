@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Klas {
 
     private ArrayList<Leerling>leerlingen ;
+    private Leerling lArr [] ;
 
     private String KlasNaam ;
     private Leerling leerling;
@@ -12,6 +13,16 @@ public class Klas {
     public  Klas (String klass){
      this.KlasNaam = klass;
      leerlingen = new ArrayList<Leerling>();
+     this.leerling = new Leerling();
+     lArr = new Leerling [leerlingen.size()];
+    }
+
+    public void setLeerling(Leerling leerling){
+        this.leerling = leerling;
+    }
+    public Leerling getLeerling (){
+
+        return leerling;
     }
     public String getKlasNaam(){
         return KlasNaam;
@@ -31,9 +42,13 @@ public class Klas {
      * @param g grade to be changed to
      */
     public void wijzigCijfer(String leerling, double g) {
-        if(leerlingen.contains(leerling)){
-            this.leerling.setCijfer(g);
+
+        for(var s:leerlingen){
+            if(s.getNaam() == leerling){
+                s.setCijfer(g);
+            }
         }
+
     }
 
     public ArrayList<Leerling>  getLeerlingen() {
@@ -44,20 +59,14 @@ public class Klas {
         return leerlingen.size();
     }
 
-    private String printArray(){
-        String t = "";
-        for (int i = 0 ;i < leerlingen.size() ;i++)
-            {
-
-             }
-        return "";
-    }
 
     @Override
     public String toString() {
         String s = "In klas "+ getKlasNaam() + " zitten de volgende leerlingen:\n" , t = "";
-
+        for (int i = 0 ; i < getLeerlingen().size() ; i++){
+            t += getLeerlingen().get(i);
+        }
         return ""+s+"" +
-                "" + leerlingen +  "";
+                "" + t +  "";
     }
 }
