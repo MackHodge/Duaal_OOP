@@ -4,10 +4,17 @@ import org.junit.jupiter.api.Test;
 
 public class VoetbalclubTest {
     @Test
-    void ifNameIsNullMethodNameShouldBeFC(){
+    void ifNameIsEmptyMethodNameShouldBeFC(){
         Voetbalclub vc = new Voetbalclub("");
 
             Assertions.assertEquals(vc.getNaam(),"FC");
+
+    }
+    @Test
+    void ifNameIsNullMethodNameShouldBeFC(){
+        Voetbalclub vc = new Voetbalclub(null);
+
+        Assertions.assertEquals(vc.getNaam(),"FC");
 
     }
 
@@ -36,8 +43,9 @@ public class VoetbalclubTest {
     @Test
     void countPoints(){
         Voetbalclub vc = new Voetbalclub("");
+        vc.verwerkResultaat('w');
 
-        Assertions.assertEquals(vc.aantalPunten(),(vc.getAantalGewonnen() * vc.gPunten() ) + (vc.getAantalGelijk()));
+        Assertions.assertEquals(3, vc.aantalPunten());
 
     }
 

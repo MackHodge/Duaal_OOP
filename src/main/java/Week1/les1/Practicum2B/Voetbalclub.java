@@ -39,7 +39,7 @@ public class Voetbalclub {
 
 
     public void setWhenNull(){
-        if(getNaam().isEmpty()){
+        if(getNaam() == null  || getNaam().isEmpty() ){
             setNaam("FC");
         }
     }

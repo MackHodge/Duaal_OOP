@@ -24,6 +24,8 @@ public class Klas {
 
         return leerling;
     }
+
+
     public String getKlasNaam(){
         return KlasNaam;
     }

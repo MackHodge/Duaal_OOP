@@ -3,7 +3,7 @@ package Week2.Les1.Practicum4A;
 public class Huis   {
     private String adres;
     private int bouwjaar;
-    private Persoon _Persoon;
+    private Persoon huisbaas;
 
     public Huis(String adr, int bwjr) {
         adres = adr;
@@ -12,18 +12,18 @@ public class Huis   {
 
 
     public void setHuisbaas(Persoon hb) {
-        _Persoon = hb;
+        huisbaas = hb;
     }
     public Persoon getHuisbaas() {
 
-        return _Persoon;
+        return huisbaas;
     }
 
     @Override
     public String toString() {
         return "Huis" +
                 " " + adres + " is gebouwd in" +
-                " " + bouwjaar + "\n en heeft huisbaas " +_Persoon.getNaam()+"; leeftijd " + _Persoon.getLeeftijd()+" jaar";
+                " " + bouwjaar + "\n en heeft huisbaas " + huisbaas.getNaam()+"; leeftijd " + huisbaas.getLeeftijd()+" jaar";
     }
 }
 

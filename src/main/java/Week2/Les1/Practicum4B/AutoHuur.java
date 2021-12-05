@@ -8,49 +8,48 @@ public class AutoHuur {
     private Auto auto;
 
     public AutoHuur (){
-        klant = new Klant();
-        auto = new Auto();
+
     }
 
     public Klant getKlant() {
         return klant;
     }
 
-    public void setKlant(Klant klant) {
-        this.klant = klant;
-    }
-
     public Auto getAuto() {
         return auto;
     }
 
-    public void setAuto(Auto auto) {
-        this.auto = auto;
+    public void setGehuurdeAuto(Auto gA) {
+        this.auto = gA;
+    }
+
+    public void setHuurder(Klant k) {
+        this.klant = k ;
     }
 
     public void setAantalDagen(int i) {
+        aantalDagen =  i ;
     }
 
     public int getAantalDagen () {
-        return 1;
+        return aantalDagen;
     }
 
-    public void setGehuurdeAuto(Auto gA) {
-    }
+
     public Auto getGehuurdeAuto() {
         return auto;
     }
 
-    public void setHuurder(Klant k) {
-    }
 
-    public Klant getHuurder () {
-
-        return klant;
-    }
     public double totaalPrijs () {
 
-        return 0.0;
+        if(getKlant() != null && getAuto() != null) {
+            double result = (100.0 - getKlant().getKorting()) / 100;
+
+            return (getAuto().getPrijsPerDag() * getAantalDagen()) * result;
+        }else {
+            return 0;
+        }
     }
     @Override
     public String toString(){
@@ -58,14 +57,16 @@ public class AutoHuur {
         if(getAuto() == null){
             s = "Er is nog geen auto bekend";
         }else{
-            s ="autotype: "+getGehuurdeAuto().getAutotype()+" met prijs per dag: "+getGehuurdeAuto().getPrijsPerDag()+"";
+            s ="autotype: "+getAuto().getAutotype()+" met prijs per dag: "+getAuto().getPrijsPerDag()+"";
         }
         if(getKlant() == null){
            t = "er is geen huurder bekend";
         }else{
-            t = "op naam van: Mijnheer de Vries (korting: "+klant.getKorting()+")";
+            t = "op naam van: "+getKlant().getNaam()+" (korting: "+getKlant().getKorting()+"%)";
         }
-        return s +"\n"+ t;
+
+        e = "aantal dagen: " +getAantalDagen() + " en dat kost " +totaalPrijs() +" ";
+        return s +"\n"+ t +"\n"+ e +"";
     }
 
 

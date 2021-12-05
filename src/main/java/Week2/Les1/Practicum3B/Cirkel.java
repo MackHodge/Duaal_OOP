@@ -10,7 +10,7 @@ public class Cirkel {
     private int yPositie ;
 
 
-    public Cirkel(int x , int y , int  radius){
+    public Cirkel( int radius , int x , int y){
         xPositie = x ;
         yPositie = y ;
         if(radius <= 0) {
