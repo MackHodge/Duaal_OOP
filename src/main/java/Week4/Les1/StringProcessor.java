@@ -11,18 +11,18 @@ public class StringProcessor {
     }
 
     public void voegProcesToe(VervangProces vervangProces){
-        // ‘voegProcesToe()’ waarmee een proces kan worden toegevoegd aan de ArrayList van processen.
         process.add(vervangProces);
     }
     public void voegProcesToe(HoofdletterProces hoofdletterProces)
     {
-        // ‘voegProcesToe()’ waarmee een proces kan worden toegevoegd aan de ArrayList van processen.
         process.add(hoofdletterProces);
 
     }
 
     public String verwerk(String inputString) {
-
+        for (OpmaakProces proces:process) {
+           inputString =  proces.opmaak(inputString);
+        }
         return inputString;
     }
 }

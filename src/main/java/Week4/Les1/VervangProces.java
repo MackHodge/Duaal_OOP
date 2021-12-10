@@ -10,9 +10,19 @@ public class VervangProces implements OpmaakProces{
         this.nieuw = nieuw;
     }
 
+    /**
+     * //if string contain this input vervang met niuwe String
+     * @param input
+     * @return
+     */
+
     @Override
     public String opmaak(String input) {
+        String s = "";
+        if(input.contains(oud)){
+         s += input.replace(oud,nieuw);
+        }
 
-        return input;
+        return s;
     }
 }
