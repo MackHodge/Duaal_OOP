@@ -8,6 +8,7 @@ public class Persoon {
     private double budget;
 
     private ArrayList<Game> mijnGames = new ArrayList();
+
     private String pattern = "0.00";
     private DecimalFormat decimalFormat = new DecimalFormat(pattern);
 
@@ -16,28 +17,20 @@ public class Persoon {
         this.budget = bud;
     }
 
-
     public ArrayList<Game> getMijnGames() {
         return mijnGames;
     }
 
-    private boolean doesGameExist(Game game){
-        for (var g: mijnGames) {
-            if(g.getNaam().contains(game.getNaam()) && g.getReleaseJaar() == game.getReleaseJaar()){
-                return false;
-            }
-        }
-        return true;
-    }
 
     /**
-     * If person budget is les than game price return or the game is the same true
+     * If person budget is les than the game price && and if i dont already
+     * own the game return true or the game is the same true
      * @param g game object
      * @return true if enough funds and the game does not exist
      */
     public boolean koop(Game g) {
         boolean t ;
-        if (g != null && this.budget > g.huidigeWaarde() && doesGameExist(g)) {
+        if (g != null && this.budget > g.huidigeWaarde() && !mijnGames.contains(g) ) {
                 this.budget -= g.huidigeWaarde();
                 mijnGames.add(g);
                 return true;
@@ -53,35 +46,30 @@ public class Persoon {
      */
 
     public boolean verkoop(Game gameToSell, Persoon koper) {
-        //look in mijnGames for the game I am trying to sell
-        //Who wants to buy the game ?
-        //Does he have enough money to buy
-        for (var gameInList :mijnGames) {
-            if(gameInList.getNaam().contains(gameToSell.getNaam()) && koper.budget >= gameInList.getDiscoutPrijs()) {
-                koper.budget -= gameInList.getDiscoutPrijs();
+
+            if(mijnGames.contains(gameToSell) && koper.budget >= gameToSell.getDiscoutPrijs()) {
+                koper.budget -= gameToSell.getDiscoutPrijs();
                 koper.mijnGames.add(gameToSell);
                 mijnGames.remove(gameToSell);
-                budget += gameInList.getDiscoutPrijs();
+                budget += gameToSell.getDiscoutPrijs();
                 return true;
-            }
         }
         return false;
 
     }
 
+    //
     private String printArrayListItems(){
         String t = " " ;
-        for (int i = 0 ; i < mijnGames.size();i++){
-            t += (mijnGames != null) ?
-           " "+mijnGames.get(i).getNaam()+ " uitgegeven in " +mijnGames.get(i).getReleaseJaar()+"; nieuwprijs: €"+mijnGames.get(i).getNieuwprijs() +" nu voor: €"
-                   +decimalFormat.format(mijnGames.get(i).getDiscoutPrijs())+"\n" :"null" ;
+        for (Game game:mijnGames) {
+            t += game.toString();
         }
           return t ;
         }
 
     @Override
     public String toString() {
-        String s = ""+this.name +" heeft een budget van " +decimalFormat.format(this.budget)+" en bezit de volgende games:"+ printArrayListItems()+"" ,t =" ";
+        String s = ""+this.name +" heeft een budget van " +decimalFormat.format(this.budget)+" en bezit de volgende games:\n"+ printArrayListItems()+"";
 
         return s;
     }

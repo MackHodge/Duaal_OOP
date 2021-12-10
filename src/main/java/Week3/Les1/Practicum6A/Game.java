@@ -5,15 +5,17 @@ import java.time.LocalDate;
 public class Game {
 
     private String naam;
-    private int huidigJaar ;
     final private int  releaseJaar;
-    private double discoutPrijs;
     private double nieuwprijs;
+
+    private int huidigJaar ;
+    private double discoutPrijs;
 
     public Game(String Title, int ReleaseJaar, double Prijs) {
             naam = Title;
             releaseJaar = ReleaseJaar;
             nieuwprijs = Prijs;
+
             huidigJaar = LocalDate.now().getYear();
     }
 
@@ -34,7 +36,6 @@ public class Game {
     }
 
 
-
     public double getNieuwprijs() {
         return nieuwprijs;
     }
@@ -43,8 +44,23 @@ public class Game {
         double t;
         return t = (releaseJaar != huidigJaar)? discoutPrijs = nieuwprijs - (nieuwprijs *0.30) : nieuwprijs;
 
-
     }
 
 
+    @Override
+    public boolean equals(Object andereObject) {
+        boolean gelijkeObjecten = false;
+        if(andereObject instanceof Game){
+            Game andereGame = (Game) andereObject;
+            if(this.naam.equals(andereGame.naam) && this.releaseJaar == andereGame.releaseJaar && this.nieuwprijs == andereGame.nieuwprijs   && this.huidigJaar == andereGame.huidigJaar) {
+                gelijkeObjecten = true;
+            }
+        }
+        return gelijkeObjecten;
+    }
+
+    @Override
+    public String toString() {
+        return ""+naam + ", uitgegeven in " + " " + releaseJaar + "; nieuwprijs " + nieuwprijs + " nu voor: " + String.format("%.2f", discoutPrijs) + "\n";
+    }
 }
