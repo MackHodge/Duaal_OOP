@@ -10,13 +10,17 @@ public class BedrijfsInventaris {
     private double budget ;
     private ArrayList<Goed> alleGoederen = new ArrayList<>();
 
-    public BedrijfsInventaris(String bedrijfnaam, double budget, ArrayList<Goed> alleGoederen) {
+    public BedrijfsInventaris(String bedrijfnaam, double budget) {
         this.bedrijfnaam = bedrijfnaam;
         this.budget = budget;
         this.alleGoederen = alleGoederen;
     }
 
-/*
+    public String getBedrijfnaam() {
+        return bedrijfnaam;
+    }
+
+    /*
 Methode schafAan(Goed) gebruik je om een goed aan te schaffen.
 Dat kan alleen if( dat goed niet al een keer aan de inventaris is
 toegevoegd && als er voldoende budget is)
@@ -36,7 +40,7 @@ toegevoegd && als er voldoende budget is)
     public String toString() {
         String s = "";
         for (Goed goederen: alleGoederen) {
-            s +=goederen;
+            s +="\n"+ goederen;
         }
         return s;
     }

@@ -1,5 +1,7 @@
 package Week4.Les1.Practicum8;
 
+import java.time.LocalDate;
+
 public class Fiets extends Voertuig{
 
     private final int framenummer ;
@@ -20,9 +22,12 @@ public class Fiets extends Voertuig{
         return gelijkeObjecten;
     }
 
+    public int huidigeJaar(){
+        return LocalDate.now().getYear();
+    }
     @Override
     public double huidigeWaarde() {
-
-        return nieuwprijs;
+        int verschilInJaar = huidigeJaar() - this.bouwjaar;
+        return (this.bouwjaar != huidigeJaar()) ? nieuwprijs *  (Math.pow(0.90 , verschilInJaar)) : 0 ;
     }
 }

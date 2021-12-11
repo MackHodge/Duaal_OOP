@@ -42,25 +42,16 @@ public class Computer implements Goed{
     public int huidigeJaar(){
         return LocalDate.now().getYear();
     }
-
     @Override
     public double huidigeWaarde() {
         int verschilInJaar = huidigeJaar() - this.productieJaar;
-        if(this.productieJaar != huidigeJaar()){
-            return  aanschafPrijs -= verschilInJaar *  (aanschafPrijs * 0.60);
-        }
-    return 0;
+        return (this.productieJaar != huidigeJaar()) ? aanschafPrijs *  (Math.pow(0.60 , verschilInJaar)) : 0 ;
     }
     /*
     Verzin zelf de toString van Computer, maar zorg dat daar in ieder geval het type en de huidige waarde in opgenomen zijn.
      */
     @Override
     public String toString() {
-        return "Computer{" +
-                "type='" + type + '\'' +
-                ", macAdres='" + macAdres + '\'' +
-                ", aanschafPrijs=" + aanschafPrijs +
-                ", productieJaar=" + productieJaar +
-                '}';
+        return "Computer type: " + type + " macAdres: " + macAdres + "" + ", Prijs: " + aanschafPrijs + "  productieJaar: " + productieJaar +"";
     }
 }

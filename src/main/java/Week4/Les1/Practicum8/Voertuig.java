@@ -29,16 +29,14 @@ public abstract class  Voertuig implements  Goed{
     }
 
     /*
-    dan levert de toString() van dit object de volgende (vetgedrukte) string op: Voertuig:
-    Mercedes-Benz A-klasse A 180 met bouwjaar 2019 heeft een
-    waarde van: €20996.5. De exacte waarde hangt af van het jaar waarin je de toString uitvoert!
+    dan levert de toString() van dit object de volgende (vetgedrukte) string op:
+    Voertuig: Mercedes-Benz A-klasse A 180 met bouwjaar 2019 heeft een
+    waarde van: €20996.5.
+    De exacte waarde hangt af van het jaar waarin je de toString uitvoert!
      */
     @Override
     public String toString() {
-        return "Voertuig{" +
-                "type='" + type + '\'' +
-                ", nieuwprijs=" + nieuwprijs +
-                ", bouwjaar=" + bouwjaar +
-                '}';
+        String s ="Voertuig " + type + " met bouwjaar " + bouwjaar + " heeft een waarde van " + huidigeWaarde() + "" ;
+        return s ;
     }
 }
