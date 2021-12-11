@@ -1,4 +1,4 @@
-package Week4.Les1;
+package Week4.Les1.Practicum7;
 
 public class VervangProces implements OpmaakProces{
     private String oud;

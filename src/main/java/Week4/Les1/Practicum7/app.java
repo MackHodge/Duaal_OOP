@@ -1,4 +1,4 @@
-package Week4.Les1;
+package Week4.Les1.Practicum7;
 
 public class app {
     public static void main(String[] args) {
