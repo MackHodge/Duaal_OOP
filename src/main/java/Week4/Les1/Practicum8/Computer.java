@@ -52,6 +52,6 @@ public class Computer implements Goed{
      */
     @Override
     public String toString() {
-        return "Computer type: " + type + " macAdres: " + macAdres + "" + ", Prijs: " + aanschafPrijs + "  productieJaar: " + productieJaar +"";
+        return "Computer type: " + type + " macAdres: " + macAdres + "" + ", Prijs: " + String.format("%.2f", aanschafPrijs )+ "  productieJaar: " + productieJaar +"";
     }
 }
