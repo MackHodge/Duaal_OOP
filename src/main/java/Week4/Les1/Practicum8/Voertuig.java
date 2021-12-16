@@ -20,13 +20,17 @@ public abstract class  Voertuig implements  Goed{
         this.bouwjaar = bouwjaar;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Voertuig voertuig = (Voertuig) o;
-        return Double.compare(voertuig.nieuwprijs, nieuwprijs) == 0 && bouwjaar == voertuig.bouwjaar && type.equals(voertuig.type);
+    public boolean equals(Object andereObject){
+        boolean gelijkeObjecten = false;
+        if(andereObject instanceof Voertuig){
+            Voertuig andereVoertuig = (Voertuig) andereObject;
+            if(this.type.equals(andereVoertuig.type) && this.bouwjaar == andereVoertuig.bouwjaar && this.nieuwprijs == andereVoertuig.nieuwprijs){
+                gelijkeObjecten = true;
+            }
+        }
+        return gelijkeObjecten;
     }
+
 
     /*
     dan levert de toString() van dit object de volgende (vetgedrukte) string op:

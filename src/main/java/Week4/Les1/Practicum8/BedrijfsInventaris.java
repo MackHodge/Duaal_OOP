@@ -13,7 +13,6 @@ public class BedrijfsInventaris {
     public BedrijfsInventaris(String bedrijfnaam, double budget) {
         this.bedrijfnaam = bedrijfnaam;
         this.budget = budget;
-        this.alleGoederen = alleGoederen;
     }
 
     public String getBedrijfnaam() {

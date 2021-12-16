@@ -19,7 +19,7 @@ public class VervangProces implements OpmaakProces{
     @Override
     public String opmaak(String input) {
         String s = "";
-        if(input.contains(oud)){
+        if(input.contains(oud) && input != null){
          s += input.replace(oud,nieuw);
         }
 

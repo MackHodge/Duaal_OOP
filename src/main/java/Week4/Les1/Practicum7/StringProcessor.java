@@ -10,13 +10,8 @@ public class StringProcessor {
 
     }
 
-    public void voegProcesToe(VervangProces vervangProces){
-        process.add(vervangProces);
-    }
-    public void voegProcesToe(HoofdletterProces hoofdletterProces)
-    {
-        process.add(hoofdletterProces);
-
+    public void voegProcesToe(OpmaakProces process){
+        this.process.add(process);
     }
 
     public String verwerk(String inputString) {

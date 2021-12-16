@@ -21,13 +21,15 @@ public class Computer implements Goed{
     }
 
 
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Computer computer = (Computer) o;
-        return Double.compare(computer.aanschafPrijs, aanschafPrijs) == 0 && productieJaar == computer.productieJaar && type.equals(computer.type) && macAdres.equals(computer.macAdres);
+    public boolean equals(Object andereObject){
+        boolean gelijkeObjecten = false;
+        if(andereObject instanceof Computer){
+            Computer andereComputer = (Computer) andereObject;
+            if(this.aanschafPrijs == andereComputer.aanschafPrijs && this.productieJaar == andereComputer.productieJaar && this.type.equals(andereComputer.type) && this.macAdres.equals(andereComputer.macAdres)){
+                gelijkeObjecten = true;
+            }
+        }
+        return gelijkeObjecten;
     }
 
     @Override

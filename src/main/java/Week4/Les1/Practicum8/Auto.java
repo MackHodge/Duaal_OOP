@@ -12,13 +12,17 @@ public class Auto extends Voertuig{
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
-        Auto auto = (Auto) o;
-        return kenteken.equals(auto.kenteken);
+    public boolean equals(Object andereObject){
+        boolean gelijkeObjecten = false;
+        if(andereObject instanceof Auto){
+            Auto andereAuto = (Auto) andereObject;
+            if(this.kenteken == andereAuto.kenteken && super.equals(andereAuto)){
+                gelijkeObjecten = true;
+            }
+        }
+        return gelijkeObjecten;
     }
+
 
     public int huidigeJaar(){
         return LocalDate.now().getYear();

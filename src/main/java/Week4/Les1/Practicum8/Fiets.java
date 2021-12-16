@@ -6,16 +6,19 @@ public class Fiets extends Voertuig{
 
     private final int framenummer ;
 
+
     public Fiets(String type, double nieuwprijs, int bouwjaar ,int fnr) {
-        super(type, nieuwprijs, bouwjaar);
+       super(type, nieuwprijs, bouwjaar);
+
         framenummer = fnr;
     }
+
     //write equals
     public boolean equals(Object andereObject){
         boolean gelijkeObjecten = false;
         if(andereObject instanceof Fiets){
             Fiets andereFiets = (Fiets) andereObject;
-            if(this.framenummer == andereFiets.framenummer){
+            if(this.framenummer == andereFiets.framenummer && super.equals(andereFiets)){
                 gelijkeObjecten = true;
             }
         }
