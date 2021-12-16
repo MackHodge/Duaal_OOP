@@ -36,7 +36,7 @@ public abstract class  Voertuig implements  Goed{
      */
     @Override
     public String toString() {
-        String s ="Voertuig " + type + " met bouwjaar " + bouwjaar + " heeft een waarde van " + String.format("%.2f", huidigeWaarde() ) + "" ;
+        String s ="Voertuig " + type + " met bouwjaar " + bouwjaar + " heeft een waarde van " + Utils.euroBedrag(huidigeWaarde())+ "" ;
         return s ;
     }
 }
